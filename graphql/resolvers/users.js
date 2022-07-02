@@ -64,6 +64,17 @@ module.exports = {
                 })
             }
 
+            const vEmail = await User.findOne({ email });
+            if(vEmail){
+                throw new UserInputError('Email is taken', {
+                    errors: {
+                        email: 'This email is taken'
+                    }
+                })
+            }
+            
+            
+
             // TODO: hash password and create auth token
             password = await bcrypt.hash(password, 12);
 
