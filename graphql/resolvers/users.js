@@ -82,7 +82,7 @@ module.exports = {
                 ...res._doc,
                 id: res._id,
                 token
-            }
-        }
+            };
+        },
     }
-}
+};
